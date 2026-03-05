@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskBoard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="mx-auto max-w-7xl p-6 space-y-6">
+        <!-- navbar  -->
+        <nav class="bg-white flex justify-between items-center p-4 rounded-lg shadow-md">
+            <h1 class="text-xl font-bold px-2"><img src="image/check-icon.png" alt="TaskBoard Icon" class="w-5 h-5 mr-1 mb-1 inline">TaskBoard</h1>
+        </nav>
+        <!--Card Section-->
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl shadow p-6">
+                <h1 class="text-gray-500 font-semibold">Total Task</h1>
+                <div class="flex justify-between item-center p-2">
+                    <p id="totalTask" class="text-4xl font-bold text-gray-800  mt-2">0</p>
+                    <button class="bg-blue-100 p-3 rounded-full"><img src="image/total-task.png" alt="Total Task Icon" class="w-8 h-8"></button>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6">
+                <h1 class="text-gray-500 font-semibold">Completed</h1>
+                <div class="flex justify-between item-center p-2">
+                    <p id="completedTask" class="text-4xl font-bold text-gray-800  mt-2">0</p>
+                    <button class="bg-green-100 p-3 rounded-full"><img src="image/complete-task.png" alt="Completed Task Icon" class="w-8 h-8"></button>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6">
+                <h1 class="text-gray-500 font-semibold">Pending</h1>
+                <div class="flex justify-between item-center p-2">
+                    <p id="pendingTask" class="text-4xl font-bold text-gray-800  mt-2">0</p>
+                    <button class="bg-yellow-100 p-3 rounded-full"><img src="image/pending-task.png" alt="Pending Task Icon" class="w-8 h-8"></button>
+                </div>
+            </div>
+        </div>
+        <!-- task Input Section -->
+         <div class="bg-white p-4 rounded-lg shadow flex gap-4">
+            <input type="text" placeholder="Add a new Task..." id="taskInput" class="flex-1 p-3 rounded-lg border border-gray-300"/>
+            <button id="addtaskBtn" class="px-5 py-3 bg-blue-500 text-white hover:bg-blue-700 rounded-lg cursor-pointer">Add Task</button>
+         </div>
+        <!-- Task List and Chart Section -->
+         <div class="grid md:grid-cols-2 gap-6">
+            <!-- Task List Section -->
+             <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Task List</h2>
+                <ul id="taskList" class="space-y-2">
+                </ul>
+             </div>
+            <!-- Chart Section -->
+             <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Overview</h2>
+                <div class="h-120 w-full flex justify-center items-center">
+                    <canvas id="taskChart"></canvas>
+                </div>
+             </div>
+         </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
